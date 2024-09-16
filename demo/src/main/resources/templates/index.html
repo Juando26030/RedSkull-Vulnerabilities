@@ -4,14 +4,24 @@
   <title>Login Page</title>
 </head>
 <body>
-<h1>Super secret RedSkull project</h1>
+<h1>Super secret ******* project :)</h1>
 <h1>Login</h1>
-<form>
+<!-- El formulario debe usar method="POST" y apuntar a "/login" -->
+<form action="/login" method="POST">
   <label for="username">Username:</label>
-  <input type="text" id="username" name="username"><br><br>
+  <input type="text" id="username" name="username" required><br><br>
+
   <label for="password">Password:</label>
-  <input type="password" id="password" name="password"><br><br>
+  <input type="password" id="password" name="password" required><br><br>
+
   <input type="submit" value="Login">
 </form>
+
+<!-- En caso de que haya un error, mostramos el mensaje -->
+<div>
+  <p style="color:red;">
+    <span th:text="${error}"></span>
+  </p>
+</div>
 </body>
 </html>

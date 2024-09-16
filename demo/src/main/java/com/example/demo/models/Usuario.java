@@ -16,8 +16,11 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(unique = true)
+
+    @Column(name = "nombre", unique = true)  // Cambiamos aquí para mapear correctamente la columna 'nombre'
     private String username;
-    @Column
+
+    @Column(name = "contrasena")  // Asegúrate de que coincida con el nombre de la columna de la tabla
     private String password;
 }
+

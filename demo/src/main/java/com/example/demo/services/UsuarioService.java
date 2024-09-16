@@ -13,8 +13,8 @@ public class UsuarioService {
     private EntityManager entityManager;
 
     public Usuario loginUsuario(String username, String password) {
-        // Consulta insegura vulnerable a SQL Injection
-        String sql = "SELECT * FROM usuario WHERE username = '" + username + "' AND password = '" + password + "'";
+        // Código vulnerable a SQL Injection
+        String sql = "SELECT * FROM usuario WHERE nombre = '" + username + "' AND contrasena = '" + password + "'";
         Query query = entityManager.createNativeQuery(sql, Usuario.class);
         try {
             return (Usuario) query.getSingleResult();
@@ -22,4 +22,5 @@ public class UsuarioService {
             return null; // Si no se encuentra el usuario
         }
     }
+
 }

@@ -33,8 +33,8 @@ public class UsuarioController {
             model.addAttribute("username", usuario.getUsername());
 
             // Verificar si el usuario es "redskull"
-            if ("redskull".equals(usuario.getUsername())) {
-                model.addAttribute("recordatorio", "Recordatorio! mi contraseña es: xyz");
+            if ("agapito".equals(usuario.getUsername())) {
+                model.addAttribute("recordatorio", "Recordatorio! La contraseña de redskull es: redskull666");
                 logger.info("Recordatorio añadido para el usuario redskull");
             }
 
@@ -53,7 +53,7 @@ public class UsuarioController {
         model.addAttribute("username", username);
 
         if ("redskull".equals(username)) {
-            model.addAttribute("recordatorio", "Recordatorio! mi contraseña es: redskull666");
+            model.addAttribute("recordatorio", "Recordatorio! La contraseña de redskull es: redskull666");
         }
 
         return "bienvenida";  // Muestra la página de bienvenida
